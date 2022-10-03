@@ -6,7 +6,8 @@ import (
 )
 
 func JsonLineToStruct(dataJson string, structure any) error {
-	err := json.Unmarshal([]byte(dataJson), &structure)
+	b := []byte(dataJson)
+	err := json.Unmarshal(b, &structure)
 	if err != nil {
 		return err
 	}
